@@ -6,14 +6,16 @@ const clubsSchema = z.object({
         name: z.string(),
         description: z.string(),
         accent_color: z.string().optional(),
-        links: z.object({
-            website: z.string().url().optional(),
-            instagram: z.string().url(),
-            X: z.string().url().optional(),
-            whatsapp: z.string().url().optional(),
-            LinkedIn: z.string().url().optional(),
-            Github: z.string().url().optional()
-        }),
+        links: z
+            .object({
+                Website: z.string().url().optional(),
+                Instagram: z.string().url().optional(),
+                X: z.string().url().optional(),
+                Whatsapp: z.string().url().optional(),
+                LinkedIn: z.string().url().optional(),
+                Github: z.string().url().optional(),
+            })
+            .default({}),
         type: z.tuple([
             z.enum(['club', 'team']),
             z.enum(['tech', 'cultural']),

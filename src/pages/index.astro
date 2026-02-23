@@ -4,33 +4,41 @@ import '@/styles/geometry.css'
 import favicon from '@public/favicon.png?inline'; 
 import { getCollection } from 'astro:content';
 
-const clubs = await getCollection("clubs")
+const clubs = await getCollection("clubs");
+
+const clubsSorted = [...clubs].sort((a, b) =>
+	a.data.name.localeCompare(b.data.name, undefined, { sensitivity: 'base' })
+);
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>amrita.town clubs</title>
+		<title>clubs.amrita.town</title>
 	</head>
 	<body>
-		<div style="display: flex; flex-direction: row; gap: 1rem; align-items: center;" >
+		<div style="display: flex; flex-direction: row; gap: 1rem; align-items: center; justify-content: left; margin-bottom: 0rem;" >
 			<img src={favicon} style="height: 4.2rem; image-rendering: pixelated; margin-left: -0.5rem" />
 			<h1>clubs</h1>
 		</div>
+		<p>brought to you by the folks at <a href="https://amrita.town">amrita.town</a>. This is an unofficial registry of clubs, teams, and communities at Amrita Vishwa Vidyapeetham, Bengaluru.</p>
 		<div class="clubs-grid">
-			{clubs.map(e => (
-				<div class="club-container">
+			{clubsSorted.map(e => (
+				<a href={`/${e.id}`} class="club-container">
 					<div class="club-info">
 						<p><b style={`color: ${e.data.accent_color || 'var(--text)'};`}>{e.data.name}</b></p>
-						<p>{e.data.description}</p>
-						<p>{e.data.type[2].join(', ')}</p>
+						<small>{e.data.description}</small>
 					</div>
-					<img src={"/icons/" + e.data.name.toLowerCase().replace(/\s+/g, '-') + ".png" || favicon} class="club-favicon" />
-				</div>
+					<img
+						src={`/icons/${e.id}.png`}
+						class="club-favicon"
+						alt={e.data.name + " icon"}
+						onerror="this.onerror=null;this.src='/favicon.png';"
+					/>
+				</a>
 			))
 			}
 		</div>

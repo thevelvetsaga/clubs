@@ -1,9 +1,9 @@
 ---
 name: IEEE CIS
-description: IEEE Computational Intelligence Society
+description: IEEE Computational Intelligence Society at Amrita Bengaluru
 links:
-    website: https://ieeecisaseb.codes/
-    instagram: https://www.instagram.com/ieee_cis_aseb
+    Website: https://ieeecisaseb.codes/
+    Instagram: https://www.instagram.com/ieee_cis_aseb
     LinkedIn: https://www.linkedin.com/company/ieee-cis/
 accent_color: "rgb(20,100,200)"
 type:

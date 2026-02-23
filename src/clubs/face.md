@@ -2,9 +2,8 @@
 name: FACE
 description: Forum for Aspiring Computer Engineers at Amrita Bengaluru
 links:
-    website: https://asebface.in/
-    instagram: https://www.instagram.com/face_aseb/
-    # whatsapp: https://atlasdev.club/
+    Website: https://asebface.in/
+    Instagram: https://www.instagram.com/face_aseb/
     LinkedIn: https://www.linkedin.com/company/face-amrita/
     Github: https://github.com/FACE-ASEB2025
 accent_color: "#00BFFF"

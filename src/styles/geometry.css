@@ -1,16 +1,17 @@
 .clubs-grid {
 	display: flex;
+
 	flex-wrap: wrap;
 	gap: 1rem;
 	/* margin-top: 2rem; why? */
-	justify-content: center;
+	justify-content: safe center;
 }
 
 .club-container {
 	width: 320px;
-	height: 100px;
+    height: 90px;
 	padding: .75rem 1rem;
-    background-color: var(--tertiary); /* temporary */
+	background-color: var(--tertiary);
 	padding: .75rem var(--x-padding, 1rem);
 	border-radius: .5rem;
 	color: var(--text);
@@ -18,7 +19,7 @@
 	display: flex;
 	gap: .5rem;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-start;
 	border: 1px solid transparent;
 	overflow: hidden;
 }
@@ -32,23 +33,41 @@
 	display: flex;
 	flex-direction: column;
 	gap: 0.1rem;
-	overflow: hidden;
 	flex: 1;
 }
 
 .club-info p {
 	margin: 0;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+	white-space: normal;
+	word-break: break-word;
+}
+
+.club-actions {
+	display: flex;
+	gap: 0.5rem;
+	margin-top: 0.5rem;
+}
+
+.club-actions a, .club-actions button {
+	font-size: 0.75rem;
+	padding: 0.2rem 0.5rem;
+	border-radius: 0.2rem;
+	border: 1px solid var(--secondary);
+	background: var(--tertiary);
+	color: var(--text);
+	cursor: pointer;
+	text-decoration: none;
 }
 
 .club-favicon {
-	height: 3.5rem;
-	width: 3.5rem;
+	height: 100%;
+	max-width: 4.5rem;
 	object-fit: contain;
 	image-rendering: pixelated;
 	flex-shrink: 0;
+	position: sticky;
+	top: 0;
 }
+
 
 
