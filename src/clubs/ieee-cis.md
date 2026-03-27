@@ -1,20 +1,21 @@
 ---
 name: IEEE CIS
 description: IEEE Computational Intelligence Society at Amrita Bengaluru
+accent_color_light: rgb(20,100,200)
+accent_color_dark: rgb(20,100,200)
 links:
-    Website: https://ieeecisaseb.codes/
-    Instagram: https://www.instagram.com/ieee_cis_aseb
-    LinkedIn: https://www.linkedin.com/company/ieee-cis/
-accent_color: "rgb(20,100,200)"
-type:
-    - club
-    - tech
-    - - cse
+  Website: https://ieeecisaseb.codes/
+  Instagram: https://www.instagram.com/ieee_cis_aseb
+  LinkedIn: https://www.linkedin.com/company/ieee-cis/
+classification:
+  organization:
+  - Club
+  category:
+  - IEEE
 ---
-
 # IEEE Computational Intelligence Society (CIS)
 
-IEEE CIS is a technical society dedicated to advancing artificial intelligence through computational paradigms. We focus on neural networks, machine learning algorithms, and generative AI driving intelligent systems and autonomous applications in data science.
+IEEE CIS is a STEM society dedicated to advancing artificial intelligence through computational paradigms. We focus on neural networks, machine learning algorithms, and generative AI driving intelligent systems and autonomous applications in data science.
 
 ## Machine Learning & Deep Learning
 

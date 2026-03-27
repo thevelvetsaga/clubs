@@ -2,13 +2,10 @@
 name: Raaga
 description: The Music Club
 links: {}
-type:
-    - club
-    - cultural
-    - - cse
-      - ece
-      - eee
-      - mech
+classification:
+  organization:
+  - Club
+  category:
+  - Cultural
 ---
-
 Raaga is the music club under Sanskriti (Amritadhara) at ASE Bengaluru.

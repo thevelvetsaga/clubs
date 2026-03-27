@@ -2,13 +2,11 @@
 name: VALORA
 description: The fashion club
 links: {}
-type:
-    - ['team', 'club']
-    - cultural
-    - - cse
-      - ece
-      - eee
-      - mech
+classification:
+  organization:
+  - Team
+  - Club
+  category:
+  - Cultural
 ---
-
 VALORA is the fashion club at ASE Bengaluru, focused on styling, design, and fashion-related campus activities.

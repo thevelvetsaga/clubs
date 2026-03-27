@@ -2,7 +2,8 @@
 name: Your Club Name
 description: One-line description of your club
 # Optional. Remove this line if you do not want an accent color.
-accent_color: '#1f7a8c'
+accent_color_light: '#1f7a8c'
+accent_color_dark: '#1f7a8c'
 
 # Optional. Example: A-402 Mon-Tue-Thu 4-6 PM
 location: Your location
@@ -18,10 +19,10 @@ links:
 
 # Required format:
 # - Club or Team
-# - Technical or Cultural or Humanities
+# - STEM or Cultural or Humanities
 type:
     - Club
-    - Technical
+    - STEM
 ---
 
 You can include:

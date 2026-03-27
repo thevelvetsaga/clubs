@@ -2,13 +2,10 @@
 name: CSI
 description: Computer Society of India
 links: {}
-type:
-    - club
-    - tech
-    - - cse
-      - ece
-      - eee
-      - mech
+classification:
+  organization:
+  - Club
+  category:
+  - STEM
 ---
-
-CSI (Computer Society of India) is a technical society under Prachodana (Amritadhara) at ASE Bengaluru.
+CSI (Computer Society of India) is a STEM society under Prachodana (Amritadhara) at ASE Bengaluru.

@@ -2,13 +2,10 @@
 name: Prakriti
 description: The Environmental Club
 links: {}
-type:
-    - club
-    - cultural
-    - - cse
-      - ece
-      - eee
-      - mech
+classification:
+  organization:
+  - Club
+  category:
+  - Cultural
 ---
-
 Prakriti is the environmental club under Sanskriti (Amritadhara) at ASE Bengaluru.

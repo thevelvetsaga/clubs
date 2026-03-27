@@ -2,10 +2,10 @@
 name: SAE
 description: Society of Automotive Engineers
 links: {}
-type:
-    - club
-    - tech
-    - - mech
+classification:
+  organization:
+  - Club
+  category:
+  - STEM
 ---
-
-SAE (Society of Automotive Engineers) is a technical society under Prachodana (Amritadhara) at ASE Bengaluru.
+SAE (Society of Automotive Engineers) is a STEM society under Prachodana (Amritadhara) at ASE Bengaluru.

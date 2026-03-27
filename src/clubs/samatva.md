@@ -2,13 +2,10 @@
 name: Samatva
 description: Yoga Club
 links: {}
-type:
-    - club
-    - cultural
-    - - cse
-      - ece
-      - eee
-      - mech
+classification:
+  organization:
+  - Club
+  category:
+  - Cultural
 ---
-
 Samatva is the yoga club under Sanskriti (Amritadhara) at ASE Bengaluru.

@@ -2,13 +2,10 @@
 name: Narthana
 description: The Dance Club
 links: {}
-type:
-    - club
-    - cultural
-    - - cse
-      - ece
-      - eee
-      - mech
+classification:
+  organization:
+  - Club
+  category:
+  - Cultural
 ---
-
 Narthana is the dance club under Sanskriti (Amritadhara) at ASE Bengaluru.

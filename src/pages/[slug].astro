@@ -12,11 +12,11 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
-const { accent_color, links, name } = entry.data;
+const { accent_color_light, accent_color_dark, links, name } = entry.data;
 ---
 
 <Layout title={name}>
-	<main class="club-page" style={`--accent: ${accent_color || 'var(--text)'}`}>
+	<main class="club-page" style={`--accent-light: ${accent_color_light || 'var(--text)'}; --accent-dark: ${accent_color_dark || accent_color_light || 'var(--text)'}`}>
 		<a href="/" class="back-button">← Back</a>
 		<article>
 			<header>
@@ -40,6 +40,7 @@ const { accent_color, links, name } = entry.data;
 
 <style>
 	.club-page {
+		--accent: light-dark(var(--accent-light), var(--accent-dark));
 		max-width: 70ch;
 		margin: 2rem auto;
 		padding: 2rem;

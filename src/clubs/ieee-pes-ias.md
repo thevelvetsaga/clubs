@@ -2,13 +2,10 @@
 name: IEEE PES & IAS
 description: IEEE Power & Energy Society and Industry Applications Society joint chapter
 links: {}
-type:
-    - club
-    - tech
-    - - cse
-      - ece
-      - eee
-      - mech
+classification:
+  organization:
+  - Club
+  category:
+  - IEEE
 ---
-
 IEEE PES & IAS is a joint IEEE chapter under Prachodana (Amritadhara) at ASE Bengaluru.

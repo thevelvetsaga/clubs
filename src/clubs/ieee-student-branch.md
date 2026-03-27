@@ -2,13 +2,10 @@
 name: IEEE Student Branch
 description: IEEE Student Branch
 links: {}
-type:
-    - club
-    - tech
-    - - cse
-      - ece
-      - eee
-      - mech
+classification:
+  organization:
+  - Club
+  category:
+  - IEEE
 ---
-
 IEEE Student Branch is the campus IEEE student organization under Prachodana (Amritadhara) at ASE Bengaluru.

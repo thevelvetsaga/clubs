@@ -2,13 +2,10 @@
 name: JIDO
 description: The Industrial Automation Club
 links: {}
-type:
-    - club
-    - tech
-    - - cse
-      - ece
-      - eee
-      - mech
+classification:
+  organization:
+  - Club
+  category:
+  - STEM
 ---
-
 JIDO is the industrial automation club under Prachodana (Amritadhara) at ASE Bengaluru.

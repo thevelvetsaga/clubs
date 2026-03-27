@@ -3,12 +3,12 @@ name: Team Ameya
 description: SAE BAJA off-road racing team
 links:
   instagram: https://www.instagram.com/team.ameya
-type:
-  - team
-  - tech
-  - - mech
+classification:
+  organization:
+  - Team
+  category:
+  - STEM
 ---
-
 Team Ameya is the official SAE BAJA off-road racing team from the Amrita School of Engineering, Bengaluru (ASEB). Composed of engineering students, the team designs and builds robust all-terrain vehicles (ATVs) to compete in national-level collegiate engineering competitions.
 
 ## Key Team Details

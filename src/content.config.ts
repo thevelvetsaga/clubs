@@ -8,7 +8,8 @@ const oneOrMany = <T extends z.ZodTypeAny>(schema: T) =>
 const clubsSchema = z.object({
     name: z.string(),
     description: z.string(),
-    accent_color: z.string().optional(),
+    accent_color_light: z.string().optional(),
+    accent_color_dark: z.string().optional(),
     location: z.string().optional(),
     links: z
         .object({
@@ -25,7 +26,7 @@ const clubsSchema = z.object({
             organization: oneOrMany(z.enum(['Club', 'Team'])).refine(v => v.length > 0, {
                 message: 'At least one organization type is required',
             }),
-            category: oneOrMany(z.enum(['Technical', 'Cultural','Humanities'])).refine(v => v.length > 0, {
+            category: oneOrMany(z.enum(['STEM', 'Cultural','Humanities', 'IEEE'])).refine(v => v.length > 0, {
                 message: 'At least one category is required',
             }),
             tags: z.array(z.string().min(2)).default([]),
@@ -37,7 +38,5 @@ const clubs = defineCollection({
     loader: glob({ pattern: '**/*.md', base: './src/clubs' }),
     schema: clubsSchema
 });
-
-type e = z.infer<typeof clubsSchema>
 
 export const collections = { clubs };

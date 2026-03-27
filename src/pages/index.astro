@@ -1,13 +1,35 @@
 ---
 import '@/styles/style.css'
 import '@/styles/geometry.css'
-import favicon from '@public/favicon.png?inline'; 
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import { getCollection } from 'astro:content';
+import favicon from '@/assets/favicon.png';
 
 const clubs = await getCollection("clubs");
 
+const iconModules = import.meta.glob<{ default: ImageMetadata }>('/src/assets/icons/*.png', { eager: true });
+const iconMap = Object.fromEntries(
+	Object.entries(iconModules).map(([filePath, module]) => {
+		const key = filePath.split('/').at(-1)?.replace(/\.png$/, '') ?? '';
+		return [key, module.default];
+	})
+);
+
 const clubsSorted = [...clubs].sort((a, b) =>
 	a.data.name.localeCompare(b.data.name, undefined, { sensitivity: 'base' })
+);
+
+const totalCount = clubs.length;
+const clubsCount = clubs.filter((e) => e.data.classification.organization.includes('Club')).length;
+const teamsCount = clubs.filter((e) => e.data.classification.organization.includes('Team')).length;
+
+const categories = ['STEM', 'Cultural', 'Humanities', 'IEEE'] as const;
+const categoryCounts = Object.fromEntries(
+	categories.map((category) => [
+		category,
+		clubs.filter((e) => e.data.classification.category.includes(category)).length,
+	])
 );
 ---
 
@@ -21,48 +43,82 @@ const clubsSorted = [...clubs].sort((a, b) =>
 	</head>
 	<body>
 		<div style="display: flex; flex-direction: row; gap: 1rem; align-items: center; justify-content: left; margin-bottom: 0rem;" >
-			<img src={favicon} style="height: 4.2rem; image-rendering: pixelated; margin-left: -0.5rem" />
+			<Image src={favicon} alt="clubs logo" format="png" style="height: 67px; width: 67px; image-rendering: pixelated; margin-left: -0.5rem" />
 			<h1>clubs</h1>
 		</div>
-		<p>brought to you by the folks at <a href="https://amrita.town">amrita.town</a>. This is an unofficial registry of clubs, teams, and communities at Amrita Vishwa Vidyapeetham, Bengaluru. Club information is maintained by the respective organization leads. To update your club's details, please <a href="https://amrita.town/contact">reach out</a> to the amrita.town team. By using this platform, you agree to our <a href="/tos">Terms of Service</a>.</p>
+		<p>brought to you by the folks at <a href="https://amrita.town">amrita.town</a>. This is an unofficial students maintained registry of clubs, teams, and communities at Amrita Vishwa Vidyapeetham, Bengaluru</p>
 		
 		<div class="filters" style="margin-bottom: 1.5rem; display: flex; gap: 1.5rem; flex-wrap: wrap;">
-			<div class="filter-group">
-				<label style="font-weight: bold; margin-right: 0.5rem;">Type:</label>
+			<div class="filter-group" role="group" aria-label="Filter by organization type">
+				<span style="font-weight: bold; margin-right: 0.5rem;">Type:</span>
 				<button class="filter-btn active" data-filter-type="organization" data-value="all">All</button>
 				<button class="filter-btn" data-filter-type="organization" data-value="club">Clubs</button>
 				<button class="filter-btn" data-filter-type="organization" data-value="team">Teams</button>
 			</div>
-			<div class="filter-group">
-				<label style="font-weight: bold; margin-right: 0.5rem;">Category:</label>
+			<div class="filter-group" role="group" aria-label="Filter by category">
+				<span style="font-weight: bold; margin-right: 0.5rem;">Category:</span>
 				<button class="filter-btn active" data-filter-type="category" data-value="all">All</button>
-				<button class="filter-btn" data-filter-type="category" data-value="tech">Technical</button>
+				<button class="filter-btn" data-filter-type="category" data-value="stem">STEM</button>
 				<button class="filter-btn" data-filter-type="category" data-value="cultural">Cultural</button>
+				<button class="filter-btn" data-filter-type="category" data-value="humanities">Humanities</button>
+				<button class="filter-btn" data-filter-type="category" data-value="ieee">IEEE</button>
 			</div>
 		</div>
 		
 		<div class="clubs-grid" id="clubs-grid">
 			{clubsSorted.map(e => (
+				(() => {
+					const icon = iconMap[e.id] ?? favicon;
+					return (
 				<a 
 					href={`/${e.id}`} 
 					class="club-container"
-					data-org-type={e.data.type[0].join(',')}
-					data-category={e.data.type[1].join(',')}
+					data-org-type={e.data.classification.organization.map((v) => v.toLowerCase()).join(',')}
+					data-category={e.data.classification.category.map((v) => v.toLowerCase()).join(',')}
 				>
 					<div class="club-info">
-						<p><b style={`color: ${e.data.accent_color || 'var(--text)'};`}>{e.data.name}</b></p>
+						<p>
+							<b style={`--accent-light: ${e.data.accent_color_light || 'var(--text)'}; --accent-dark: ${e.data.accent_color_dark || e.data.accent_color_light || 'var(--text)'}; color: light-dark(var(--accent-light), var(--accent-dark));`}>
+								{e.data.name}
+							</b>
+						</p>
 						<small>{e.data.description}</small>
 					</div>
-					<img
-						src={`/icons/${e.id}.png`}
-						class="club-favicon"
-						alt={e.data.name + " icon"}
-						onerror="this.onerror=null;this.src='/favicon.png';"
-					/>
+					<Image
+					src={icon}
+					class="club-favicon"
+					alt={e.data.name + " icon"}
+					format="png"
+					style="image-rendering: pixelated; height: 67px; width: 67px;" 
+				/>
 				</a>
+					);
+				})()
 			))
 			}
 		</div>
+
+		<footer style="margin-top: 2rem; text-align: center;">
+			<p style="margin: 0; font-size: 1rem; line-height: 1.5; font-weight: 500;">
+				<strong>Total</strong>: {totalCount}
+				<span aria-hidden="true"> | </span>
+				<strong>Clubs</strong>: {clubsCount}
+				<span aria-hidden="true"> • </span>
+				<strong>Teams</strong>: {teamsCount}
+			</p>
+			<p style="margin: 0.15rem 0 0; font-size: 0.97rem; line-height: 1.5; opacity: 0.95;">
+				<strong>STEM</strong>: {categoryCounts.STEM}
+				<span aria-hidden="true"> • </span>
+				<strong>Cultural</strong>: {categoryCounts.Cultural}
+				<span aria-hidden="true"> • </span>
+				<strong>Humanities</strong>: {categoryCounts.Humanities}
+				<span aria-hidden="true"> • </span>
+				<strong>IEEE</strong>: {categoryCounts.IEEE}
+			</p>
+			<p style="margin: 0.35rem 0 0; font-size: 0.99rem;">
+				Are you a club president? <a href="/update"><strong>Update</strong></a> your club's info!
+			</p>
+		</footer>
 		
 		<script>
 			const filterButtons = document.querySelectorAll('.filter-btn');

@@ -2,13 +2,10 @@
 name: Smriti
 description: Photography and Design Club
 links: {}
-type:
-    - club
-    - cultural
-    - - cse
-      - ece
-      - eee
-      - mech
+classification:
+  organization:
+  - Club
+  category:
+  - Cultural
 ---
-
 Smriti is the photography and design club under Sanskriti (Amritadhara) at ASE Bengaluru.

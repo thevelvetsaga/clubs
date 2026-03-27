@@ -2,13 +2,10 @@
 name: Kala
 description: The Fine Arts Club
 links: {}
-type:
-    - club
-    - cultural
-    - - cse
-      - ece
-      - eee
-      - mech
+classification:
+  organization:
+  - Club
+  category:
+  - Cultural
 ---
-
 Kala is the fine arts club under Sanskriti (Amritadhara) at ASE Bengaluru.
