@@ -1,6 +1,6 @@
 ---
 name: bi0s
-description: Student cybersecurity / CTF team
+description: Cybersecurity / CTF team
 links: {}
 type:
     - team
