@@ -53,14 +53,14 @@ body {
 
 	line-height: 1.72;
 	margin: 2rem auto;
-	width: min(90%, 1400px);
+	width: min(80%, 120ch);
+}
+
+button {
+	font-family: inherit;
 }
 
 /* inline */
-
-p {
-	margin-block-end: 1rem;
-}
 
 a {
 	color: var(--accent);
@@ -106,6 +106,10 @@ h6 {
 	font-size: 1.15rem;
 }
 
+b {
+	font-weight: 600;
+}
+
 kbd {
 	border: 1px solid var(--text);
 	border-radius: 0.2rem;
@@ -144,12 +148,17 @@ pre {
 
 /* block */
 
+
+p {
+	margin-block-end: 1rem;
+}
+
 ul,
 ol {
 	margin-inline-start: 1.5rem;
-
+	margin-block-end: 1rem;
 	li {
-		margin-block: 0.8rem;
+		margin-block: 0.2rem;
 	}
 }
 

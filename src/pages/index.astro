@@ -48,20 +48,24 @@ const categoryCounts = Object.fromEntries(
 		</div>
 		<p>brought to you by the folks at <a href="https://amrita.town">amrita.town</a>. This is an unofficial students maintained registry of clubs, teams, and communities at Amrita Vishwa Vidyapeetham, Bengaluru</p>
 		
-		<div class="filters" style="margin-bottom: 1.5rem; display: flex; gap: 1.5rem; flex-wrap: wrap;">
-			<div class="filter-group" role="group" aria-label="Filter by organization type">
-				<span style="font-weight: bold; margin-right: 0.5rem;">Type:</span>
-				<button class="filter-btn active" data-filter-type="organization" data-value="all">All</button>
-				<button class="filter-btn" data-filter-type="organization" data-value="club">Clubs</button>
-				<button class="filter-btn" data-filter-type="organization" data-value="team">Teams</button>
+		<div style="margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; gap: 3rem">
+			<div>
+				<p style="margin-bottom: 0.5rem;">Type</p>
+				<div class="filter-group" role="group" aria-label="Filter by organization type">
+					<button class="filter-btn active" data-filter-type="organization" data-value="all">All</button>
+					<button class="filter-btn" data-filter-type="organization" data-value="club">Clubs</button>
+					<button class="filter-btn" data-filter-type="organization" data-value="team">Teams</button>
+				</div>
 			</div>
-			<div class="filter-group" role="group" aria-label="Filter by category">
-				<span style="font-weight: bold; margin-right: 0.5rem;">Category:</span>
-				<button class="filter-btn active" data-filter-type="category" data-value="all">All</button>
-				<button class="filter-btn" data-filter-type="category" data-value="stem">STEM</button>
-				<button class="filter-btn" data-filter-type="category" data-value="cultural">Cultural</button>
-				<button class="filter-btn" data-filter-type="category" data-value="humanities">Humanities</button>
-				<button class="filter-btn" data-filter-type="category" data-value="ieee">IEEE</button>
+			<div>
+				<p style="margin-bottom: 0.5rem;">Category</p>
+				<div class="filter-group" role="group" aria-label="Filter by category">
+					<button class="filter-btn active" data-filter-type="category" data-value="all">All</button>
+					<button class="filter-btn" data-filter-type="category" data-value="stem">STEM</button>
+					<button class="filter-btn" data-filter-type="category" data-value="cultural">Cultural</button>
+					<button class="filter-btn" data-filter-type="category" data-value="humanities">Humanities</button>
+					<button class="filter-btn" data-filter-type="category" data-value="ieee">IEEE</button>
+				</div>
 			</div>
 		</div>
 		
@@ -90,7 +94,7 @@ const categoryCounts = Object.fromEntries(
 					class="club-favicon"
 					alt={e.data.name + " icon"}
 					format="png"
-					style="image-rendering: pixelated; height: 67px; width: 67px;" 
+					style={"height: 67px; width: 67px;" + (icon === favicon ? "image-rendering: pixelated;" : "")}
 				/>
 				</a>
 					);
@@ -117,7 +121,7 @@ const categoryCounts = Object.fromEntries(
 				<strong>IEEE</strong>: {categoryCounts.IEEE}
 			</p>
 			<p style="margin: 0.35rem 0 0; font-size: 0.99rem;">
-				Are you a club president? <a href="/update"><strong>Update</strong></a> your club's info!
+				Are you in charge of a club? <a href="/update"><strong>Update</strong></a> your club's info!
 			</p>
 		</footer>
 		

@@ -1,26 +1,23 @@
 .clubs-grid {
+	--x-padding: 1rem;
 	display: flex;
-
 	flex-wrap: wrap;
 	gap: 1rem;
 	/* margin-top: 2rem; why? */
-	justify-content: safe center;
+	justify-content: safe space-between;
+	margin: 0 calc(var(--x-padding) * -1);
 }
 
 .club-container {
 	width: 320px;
     height: 90px;
-	padding: .75rem 1rem;
-	background-color: var(--tertiary);
-	padding: .75rem var(--x-padding, 1rem);
+	/* padding: .75rem 1rem; */
+	padding: .75rem var(--x-padding);
 	border-radius: .5rem;
 	color: var(--text);
 	text-decoration: none;
 	display: flex;
 	gap: .5rem;
-	justify-content: space-between;
-	align-items: flex-start;
-	border: 1px solid transparent;
 	overflow: hidden;
 }
 
@@ -59,16 +56,6 @@
 	text-decoration: none;
 }
 
-.club-favicon {
-	height: 100%;
-	max-width: 4.5rem;
-	object-fit: contain;
-	image-rendering: pixelated;
-	flex-shrink: 0;
-	position: sticky;
-	top: 0;
-}
-
 .filter-group {
 	display: flex;
 	align-items: center;
@@ -84,6 +71,7 @@
 	border-radius: 0.5rem;
 	transition: all 0.2s;
 	font-size: 0.95rem;
+	font-weight: 600;
 }
 
 .filter-btn:hover {
@@ -94,6 +82,5 @@
 	background: var(--accent);
 	color: var(--base);
 	border-color: var(--accent);
-	font-weight: 600;
 }
 
