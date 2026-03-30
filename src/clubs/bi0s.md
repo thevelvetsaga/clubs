@@ -5,10 +5,10 @@ theme_color_light: "#1ea391"
 theme_color_dark: "#7AFFC7"
 location: Simulation Lab, weekdays from 3:40pm onwards
 links: 
-  website: https://bi0sblr.in/
+  Website: https://bi0sblr.in/
   X: https://x.com/bi0sblr
-  LinkedIn: https://www.linkedin.com/company/team-bi0sblr/posts/?feedView=all
-  Github: https://github.com/bi0sblr-in
+  LinkedIn: https://www.linkedin.com/company/team-bi0sblr
+  GitHub: https://github.com/bi0sblr-in
 classification:
   organization:
   - Team

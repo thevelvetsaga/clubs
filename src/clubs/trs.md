@@ -3,8 +3,8 @@ name: The Robotics Society
 description: The student chapter under The Robotics Society of India
 links:
     Website: https://rs-india.org/
-    Whatsapp: https://chat.whatsapp.com/FDsGV8XGiw6CWs75fcpRF4
-    Linkedin: https://www.linkedin.com/company/the-robotics-society-student-chapter-aseb
+    WhatsApp: https://chat.whatsapp.com/FDsGV8XGiw6CWs75fcpRF4
+    LinkedIn: https://www.linkedin.com/company/the-robotics-society-student-chapter-aseb
     Instagram: https://www.instagram.com/trs.aseb
 classification:
   organization:

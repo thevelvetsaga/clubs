@@ -5,7 +5,7 @@ theme_color_light: '#009B5B'
 theme_color_dark: '#005A34'
 links:
   Instagram: https://www.instagram.com/smriticlub/
-  Whatsapp: https://chat.whatsapp.com/HrRgjSmDHEx3x6cAEKzdT3?mode=gi_t
+  WhatsApp: https://chat.whatsapp.com/HrRgjSmDHEx3x6cAEKzdT3?mode=gi_t
 classification:
   organization:
   - Club

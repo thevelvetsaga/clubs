@@ -13,11 +13,10 @@ links:
     Website: https://example.com
     Instagram: https://instagram.com/example
     YouTube: https://youtube.com/@example
-    Tumblr: https://example.tumblr.com
     X: https://x.com/example
-    Whatsapp: https://chat.whatsapp.com/exampleInviteCode
+    WhatsApp: https://chat.whatsapp.com/exampleInviteCode
     LinkedIn: https://linkedin.com/company/example
-    Github: https://github.com/example
+    GitHub: https://github.com/example
 
 # Required format:
 # - Club or Team

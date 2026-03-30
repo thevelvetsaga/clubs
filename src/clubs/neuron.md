@@ -5,7 +5,7 @@ theme_color_light: oklch(25.64% 0.120 306.19)
 theme_color_dark: oklch(55.64% 0.120 306.19)
 links:
   Website: https://www.neuron-ai.club/
-  Whatsapp: https://chat.whatsapp.com/IMfjC8ex9ev3NW7moaDR4c
+  WhatsApp: https://chat.whatsapp.com/IMfjC8ex9ev3NW7moaDR4c
   Instagram: https://www.instagram.com/ai_neuron/
   LinkedIn: https://www.linkedin.com/company/neuron-aseb-ai/
 classification:

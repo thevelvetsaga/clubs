@@ -6,9 +6,9 @@ theme_color_dark: oklch(65% 0.24 270)
 links:
   Website: https://csi-aseb.club 
   Instagram: https://www.instagram.com/csi.aseb/
-  Whatsapp: https://chat.whatsapp.com/HS3KOMyzjwSHKRObilhs21
+  WhatsApp: https://chat.whatsapp.com/HS3KOMyzjwSHKRObilhs21
   LinkedIn: https://www.linkedin.com/company/csi-aseb
-  Github: https://github.com/csi-aseb-chapter
+  GitHub: https://github.com/csi-aseb-chapter
 classification:
   organization:
   - Club

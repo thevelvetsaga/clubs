@@ -5,7 +5,7 @@ accent_color_light: oklch(51.82% 0.171 256.8)
 accent_color_dark: oklch(51.82% 0.171 256.8)
 links:
   Website: https://www.amrita.edu/school/artificial-intelligence/bengaluru/professional-clubs/ieee-wie/
-  Instagram: https://www.instagram.com/ieee_cis_aseb
+  Instagram: https://www.instagram.com/ieee_wie.aseb/
   LinkedIn: https://www.linkedin.com/in/ieee-wie-aseb-393586390/
 classification:
   organization:

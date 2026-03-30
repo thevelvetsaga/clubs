@@ -7,7 +7,7 @@ links:
   Website: https://asebface.in/
   Instagram: https://www.instagram.com/face_aseb/
   LinkedIn: https://www.linkedin.com/company/face-amrita/
-  Github: https://github.com/FACE-ASEB2025
+  GitHub: https://github.com/FACE-ASEB2025
 classification:
   organization:
   - Club

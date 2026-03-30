@@ -11,7 +11,43 @@ const clubsSchema = z.object({
     theme_color_light: z.string().optional(),
     theme_color_dark: z.string().optional(),
     location: z.string().optional(),
-    links: z.record(z.string().url()).default({}),
+    links: z.object({
+        Website: z
+            .url()
+            .optional(),
+
+        Instagram: z
+            .string()
+            .regex(/^https:\/\/(www\.)?instagram\.com\/[A-Za-z0-9_.]+\/?$/, "Invalid Instagram link")
+            .optional(),
+
+        X: z
+            .string()
+            .regex(/^https:\/\/x\.com\/[A-Za-z0-9_]+\/?$/, "Invalid X link")
+            .optional(),
+
+        WhatsApp: z
+            .url()
+            .optional(),
+
+        LinkedIn: z
+            .string()
+            .regex(/^https:\/\/(www\.)?linkedin\.com\/(?:(?:in)|(?:company))\/[A-Za-z0-9-]+\/?$/, "Invalid LinkedIn company page")
+            .optional(),
+
+        GitHub: z
+            .string()
+            .regex(/^https:\/\/github\.com\/[A-Za-z0-9-]+\/?$/, "Invalid GitHub org/user link")
+            .optional(),
+
+        Discord: z
+            .url()
+            .optional(),
+
+        Telegram: z
+            .url()
+            .optional()
+    }),
     classification: z
         .object({
             organization: oneOrMany(z.enum(['Club', 'Team'])).refine(v => v.length > 0, {

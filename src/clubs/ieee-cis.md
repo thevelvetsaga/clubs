@@ -7,7 +7,7 @@ links:
   Website: https://www.ieeecisaseb.codes
   Instagram: https://www.instagram.com/ieee_cis_aseb
   LinkedIn: https://www.linkedin.com/company/ieee-cis-aseb
-  Github: https://github.com/IEEE-CIS-ASEB
+  GitHub: https://github.com/IEEE-CIS-ASEB
 classification:
   organization:
   - Club

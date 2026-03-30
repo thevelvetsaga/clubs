@@ -6,9 +6,9 @@ theme_color_dark: oklch(71.73% .2333 42.82)
 links:
   Website: https://atlasdev.club
   Instagram: https://instagram.com/atlas_aseb
-  Whatsapp: https://atlasdev.club/whatsapp
-  LinkedIn: https://www.linkedin.com/company/atlas-aseb/
-  Github: https://github.com/atlas-aseb
+  WhatsApp: https://atlasdev.club/whatsapp
+  LinkedIn: https://linkedin.com/company/atlas-aseb
+  GitHub: https://github.com/atlas-aseb
   X: https://x.com/atlas_aseb
 classification:
   organization:

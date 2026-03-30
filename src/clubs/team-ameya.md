@@ -2,7 +2,7 @@
 name: Team Ameya
 description: SAE BAJA off-road racing team
 links:
-  instagram: https://www.instagram.com/team.ameya
+  Instagram: https://www.instagram.com/team.ameya
 classification:
   organization:
   - Team

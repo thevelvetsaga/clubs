@@ -7,7 +7,7 @@ links:
   Website: https://teamodyssey.space
   Instagram: https://www.instagram.com/teamodysseyhq
   LinkedIn: https://www.linkedin.com/in/avv-b-rover-team/
-  Github: https://github.com/TeamOdysseyHQ
+  GitHub: https://github.com/TeamOdysseyHQ
 classification:
   organization:
   - Team
