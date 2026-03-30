@@ -19,6 +19,8 @@ const clubsSchema = z.object({
             Whatsapp: z.string().url().optional(),
             LinkedIn: z.string().url().optional(),
             Github: z.string().url().optional(),
+            Discord: z.string().url().optional(),
+            Telegram: z.string().url().optional(),
         })
         .default({}),
     classification: z
