@@ -1,8 +1,8 @@
 ---
 name: NEURØN
 description: The AI Club
-accent_color_light: oklch(25.64% 0.120 306.19)
-accent_color_dark: oklch(55.64% 0.120 306.19)
+theme_color_light: oklch(25.64% 0.120 306.19)
+theme_color_dark: oklch(55.64% 0.120 306.19)
 links:
   Website: https://www.neuron-ai.club/
   Whatsapp: https://chat.whatsapp.com/IMfjC8ex9ev3NW7moaDR4c

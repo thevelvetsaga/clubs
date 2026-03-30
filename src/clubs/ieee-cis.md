@@ -1,8 +1,8 @@
 ---
 name: IEEE CIS
 description: AI - First Club
-accent_color_light: oklch(51.82% 0.171 256.8)
-accent_color_dark: oklch(51.82% 0.171 256.8)
+theme_color_light: oklch(51.82% 0.171 256.8)
+theme_color_dark: oklch(51.82% 0.171 256.8)
 links:
   Website: https://www.ieeecisaseb.codes
   Instagram: https://www.instagram.com/ieee_cis_aseb

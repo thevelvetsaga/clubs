@@ -1,8 +1,8 @@
 ---
 name: amrita.town
 description: unofficial student community in amrita
-accent_color_light: "#ae0c3e"
-accent_color_dark: "#e0527a"
+theme_color_light: "#ae0c3e"
+theme_color_dark: "#e0527a"
 links: {
 Website: "https://amrita.town"
 }

@@ -1,8 +1,8 @@
 ---
 name: FACE
-description: Forum for Aspiring Computer Engineers at Amrita Bengaluru
-accent_color_light: "#00BFFF"
-accent_color_dark: "#00BFFF"
+description: Forum for Aspiring Computer Engineers
+theme_color_light: "#00BFFF"
+theme_color_dark: "#00BFFF"
 links:
   Website: https://asebface.in/
   Instagram: https://www.instagram.com/face_aseb/

@@ -1,8 +1,8 @@
 ---
 name: ATLAS
 description: The systems programming club
-accent_color_light: oklch(71.73% .2333 42.82)
-accent_color_dark: oklch(71.73% .2333 42.82)
+theme_color_light: oklch(71.73% .2333 42.82)
+theme_color_dark: oklch(71.73% .2333 42.82)
 links:
   Website: https://atlasdev.club
   Instagram: https://instagram.com/atlas_aseb

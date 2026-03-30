@@ -2,16 +2,18 @@
 name: Your Club Name
 description: One-line description of your club
 # Optional. Remove this line if you do not want an accent color.
-accent_color_light: '#1f7a8c'
-accent_color_dark: '#1f7a8c'
+theme_color_light: '#1f7a8c'
+theme_color_dark: '#1f7a8c'
 
 # Optional. Example: A-402 Mon-Tue-Thu 4-6 PM
 location: Your location
 
-# Optional links
+# Optional links. Use any platform names as keys.
 links:
     Website: https://example.com
     Instagram: https://instagram.com/example
+    YouTube: https://youtube.com/@example
+    Tumblr: https://example.tumblr.com
     X: https://x.com/example
     Whatsapp: https://chat.whatsapp.com/exampleInviteCode
     LinkedIn: https://linkedin.com/company/example

@@ -12,23 +12,24 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
-const { accent_color_light, accent_color_dark, links, name } = entry.data;
+const { theme_color_light, theme_color_dark, links, location, name } = entry.data;
+const linkEntries = Object.entries(links).filter(
+	(entry): entry is [string, string] => typeof entry[1] === 'string' && entry[1].length > 0
+);
 ---
 
 <Layout title={name}>
-	<main class="club-page" style={`--accent-light: ${accent_color_light || 'var(--text)'}; --accent-dark: ${accent_color_dark || accent_color_light || 'var(--text)'}`}>
+	<main class="club-page" style={`--accent-light: ${theme_color_light || 'var(--text)'}; --accent-dark: ${theme_color_dark || theme_color_light || 'var(--text)'}`}>
 		<a href="/" class="back-button">← Back</a>
 		<article>
 			<header>
 				<h1 style="margin: 0%;">{name}</h1>
 				<div class="links">
-					{links.Website && <a href={links.Website} target="_blank">Website</a>}
-					{links.Instagram && <a href={links.Instagram} target="_blank">Instagram</a>}
-					{links.Whatsapp && <a href={links.Whatsapp} target="_blank">WhatsApp</a>}
-					{links.LinkedIn && <a href={links.LinkedIn} target="_blank">LinkedIn</a>}
-					{links.X && <a href={links.X} target="_blank">X</a>}
-					{links.Github && <a href={links.Github} target="_blank">GitHub</a>}
+					{linkEntries.map(([label, url]) => (
+						<a href={url} target="_blank">{label}</a>
+					))}
 				</div>
+				{location && <p class="location">{location}</p>}
 			</header>
 			<hr />
 			<div class="content">
@@ -64,6 +65,10 @@ const { accent_color_light, accent_color_dark, links, name } = entry.data;
 	h1 {
 		/* margin-bottom: 0.5rem; */
 		color: var(--accent);
+	}
+	.location {
+		margin: 0;
+		opacity: 0.9;
 	}
 	.links {
 		display: flex;

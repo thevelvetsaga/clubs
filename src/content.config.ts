@@ -8,21 +8,10 @@ const oneOrMany = <T extends z.ZodTypeAny>(schema: T) =>
 const clubsSchema = z.object({
     name: z.string(),
     description: z.string(),
-    accent_color_light: z.string().optional(),
-    accent_color_dark: z.string().optional(),
+    theme_color_light: z.string().optional(),
+    theme_color_dark: z.string().optional(),
     location: z.string().optional(),
-    links: z
-        .object({
-            Website: z.string().url().optional(),
-            Instagram: z.string().url().optional(),
-            X: z.string().url().optional(),
-            Whatsapp: z.string().url().optional(),
-            LinkedIn: z.string().url().optional(),
-            Github: z.string().url().optional(),
-            Discord: z.string().url().optional(),
-            Telegram: z.string().url().optional(),
-        })
-        .default({}),
+    links: z.record(z.string().url()).default({}),
     classification: z
         .object({
             organization: oneOrMany(z.enum(['Club', 'Team'])).refine(v => v.length > 0, {

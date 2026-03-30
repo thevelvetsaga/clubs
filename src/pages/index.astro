@@ -69,6 +69,7 @@ const categoryCounts = Object.fromEntries(
 			{clubsSorted.map(e => (
 				(() => {
 					const icon = iconMap[e.id] ?? favicon;
+					const {theme_color_light, theme_color_dark } = e.data;
 					return (
 				<a 
 					href={`/${e.id}`} 
@@ -78,7 +79,7 @@ const categoryCounts = Object.fromEntries(
 				>
 					<div class="club-info">
 						<p>
-							<b style={`--accent-light: ${e.data.accent_color_light || 'var(--text)'}; --accent-dark: ${e.data.accent_color_dark || e.data.accent_color_light || 'var(--text)'}; color: light-dark(var(--accent-light), var(--accent-dark));`}>
+							<b style={`--accent-light: ${theme_color_light || 'var(--text)'}; --accent-dark: ${theme_color_dark || theme_color_light || 'var(--text)'}; color: light-dark(var(--accent-light), var(--accent-dark));`}>
 								{e.data.name}
 							</b>
 						</p>

@@ -1,8 +1,8 @@
 ---
 name: bi0s
 description: Cybersecurity / CTF team
-accent_color_light: "#1ea391"
-accent_color_dark: "#7AFFC7"
+theme_color_light: "#1ea391"
+theme_color_dark: "#7AFFC7"
 location: Simulation Lab, weekdays from 3:40pm onwards
 links: 
   website: https://bi0sblr.in/
