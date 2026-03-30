@@ -1,5 +1,5 @@
 ---
-name: IEEE Computational Intelligence Society 
+name: IEEE CIS
 description: AI - First Club
 accent_color_light: oklch(51.82% 0.171 256.8)
 accent_color_dark: oklch(51.82% 0.171 256.8)

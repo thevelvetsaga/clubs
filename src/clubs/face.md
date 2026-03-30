@@ -17,5 +17,3 @@ classification:
 FACE (Forum for Aspiring Computer Engineers)
 
 is the premier student-led STEM community and computer science forum at the Amrita School of Engineering, Bengaluru (ASEB). It serves as an umbrella organization that integrates several international professional chapters to provide a holistic STEM environment beyond the classroom. 
-
-== THIS IS DEMO CONTENT. PLEASE REPLACE THIS WITH THE ACTUAL CONTENT FOR THE CLUB. ==

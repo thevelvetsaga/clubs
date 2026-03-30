@@ -8,4 +8,5 @@ classification:
   category:
   - STEM
 ---
+
 Aavishkara is the science forum under Prachodana (Amritadhara) at ASE Bengaluru.
