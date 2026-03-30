@@ -1,32 +1,30 @@
 ---
-name: IEEE CIS
-description: IEEE Computational Intelligence Society at Amrita Bengaluru
-accent_color_light: rgb(20,100,200)
-accent_color_dark: rgb(20,100,200)
+name: IEEE Computational Intelligence Society 
+description: AI - First Club
+accent_color_light: oklch(51.82% 0.171 256.8)
+accent_color_dark: oklch(51.82% 0.171 256.8)
 links:
-  Website: https://ieeecisaseb.codes/
+  Website: https://www.ieeecisaseb.codes
   Instagram: https://www.instagram.com/ieee_cis_aseb
-  LinkedIn: https://www.linkedin.com/company/ieee-cis/
+  LinkedIn: https://www.linkedin.com/company/ieee-cis-aseb
+  Github: https://github.com/IEEE-CIS-ASEB
 classification:
   organization:
   - Club
   category:
   - IEEE
 ---
-# IEEE Computational Intelligence Society (CIS)
 
-IEEE CIS is a STEM society dedicated to advancing artificial intelligence through computational paradigms. We focus on neural networks, machine learning algorithms, and generative AI driving intelligent systems and autonomous applications in data science.
+**We're CIS, the IEEE Computational Intelligence Society club of Amrita Vishwa Vidyapeetham, Bengaluru.**
 
-## Machine Learning & Deep Learning
+We're about the intelligence that powers the future — diving deep into machine learning, neural networks, generative AI, and the computational paradigms that make modern AI tick. We don't just use AI tools; we understand, build, and push the boundaries of what intelligent systems can do.
 
-CIS explores neural networks, deep learning architectures, and supervised/unsupervised learning algorithms that power modern AI applications across various domains.
+Above all, we believe AI isn't just about automation — it's about enhancing human potential, solving real-world problems, and doing so with  creativity, and depth.
 
-## Generative AI & LLMs
+ We  also have project showcases where members present their research-oriented AI projects and get peer feedback
 
-We investigate generative models, large language models, diffusion models, and transformer architectures that enable AI systems to create content and understand natural language.
+**Events we conduct include:**
 
-## Global Community
-
-Join over 6,000 members worldwide—researchers, practitioners, students, educators, and industry professionals—united by shared interests in fostering collaboration through conferences, publications, and educational activities.
-
-== THIS IS DEMO CONTENT. PLEASE REPLACE THIS WITH THE ACTUAL CONTENT FOR THE CLUB. ==
+- **Workshops** on deep learning frameworks, LLM fine-tuning, and hands-on model building
+- **Hackathons** challenging participants to build AI-powered solutions under time pressure
+- **Guest lectures & panels** featuring researchers and industry professionals from the global AI community
