@@ -1,33 +1,171 @@
 ---
 import '@/styles/style.css'
-import favicon from '@public/favicon.png?inline'; 
+import '@/styles/geometry.css'
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import { getCollection } from 'astro:content';
+import favicon from '@/assets/favicon.png';
 
-const clubs = await getCollection("clubs")
+const clubs = await getCollection("clubs");
+
+const iconModules = import.meta.glob<{ default: ImageMetadata }>('/src/assets/icons/*.png', { eager: true });
+const iconMap = Object.fromEntries(
+	Object.entries(iconModules).map(([filePath, module]) => {
+		const key = filePath.split('/').at(-1)?.replace(/\.png$/, '') ?? '';
+		return [key, module.default];
+	})
+);
+
+const clubsSorted = [...clubs].sort((a, b) =>
+	a.data.name.localeCompare(b.data.name, undefined, { sensitivity: 'base' })
+);
+
+const totalCount = clubs.length;
+const clubsCount = clubs.filter((e) => e.data.classification.organization.includes('Club')).length;
+const teamsCount = clubs.filter((e) => e.data.classification.organization.includes('Team')).length;
+
+const categories = ['STEM', 'Cultural', 'Humanities', 'IEEE'] as const;
+const categoryCounts = Object.fromEntries(
+	categories.map((category) => [
+		category,
+		clubs.filter((e) => e.data.classification.category.includes(category)).length,
+	])
+);
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>amrita.town clubs</title>
+		<title>clubs.amrita.town</title>
 	</head>
 	<body>
-		<div style="display: flex; flex-direction: row; gap: 1rem; align-items: center;" >
-			<img src={favicon} style="height: 4.2rem; image-rendering: pixelated; margin-left: -0.5rem" />
+		<div style="display: flex; flex-direction: row; gap: 1rem; align-items: center; justify-content: left; margin-bottom: 0rem;" >
+			<Image src={favicon} alt="clubs logo" format="png" style="height: 67px; width: 67px; image-rendering: pixelated; margin-left: -0.5rem" />
 			<h1>clubs</h1>
 		</div>
-		<p>a place to find every club, team, society or other congregation in Amrita Bengaluru</p>
-		{clubs.map(e => (
-			<div>
-				<p>{e.data.name}</p>
-				<p>{e.data.description}</p>
-				<p>{e.data.type[2].toString()}</p>
+		<p>brought to you by the folks at <a href="https://amrita.town">amrita.town</a>. This is an unofficial students maintained registry of clubs, teams, and communities at Amrita Vishwa Vidyapeetham, Bengaluru</p>
+		
+		<div class="filters" style="margin-bottom: 1.5rem; display: flex; gap: 1.5rem; flex-wrap: wrap;">
+			<div class="filter-group" role="group" aria-label="Filter by organization type">
+				<span style="font-weight: bold; margin-right: 0.5rem;">Type:</span>
+				<button class="filter-btn active" data-filter-type="organization" data-value="all">All</button>
+				<button class="filter-btn" data-filter-type="organization" data-value="club">Clubs</button>
+				<button class="filter-btn" data-filter-type="organization" data-value="team">Teams</button>
 			</div>
-		))
-		}
+			<div class="filter-group" role="group" aria-label="Filter by category">
+				<span style="font-weight: bold; margin-right: 0.5rem;">Category:</span>
+				<button class="filter-btn active" data-filter-type="category" data-value="all">All</button>
+				<button class="filter-btn" data-filter-type="category" data-value="stem">STEM</button>
+				<button class="filter-btn" data-filter-type="category" data-value="cultural">Cultural</button>
+				<button class="filter-btn" data-filter-type="category" data-value="humanities">Humanities</button>
+				<button class="filter-btn" data-filter-type="category" data-value="ieee">IEEE</button>
+			</div>
+		</div>
+		
+		<div class="clubs-grid" id="clubs-grid">
+			{clubsSorted.map(e => (
+				(() => {
+					const icon = iconMap[e.id] ?? favicon;
+					return (
+				<a 
+					href={`/${e.id}`} 
+					class="club-container"
+					data-org-type={e.data.classification.organization.map((v) => v.toLowerCase()).join(',')}
+					data-category={e.data.classification.category.map((v) => v.toLowerCase()).join(',')}
+				>
+					<div class="club-info">
+						<p>
+							<b style={`--accent-light: ${e.data.accent_color_light || 'var(--text)'}; --accent-dark: ${e.data.accent_color_dark || e.data.accent_color_light || 'var(--text)'}; color: light-dark(var(--accent-light), var(--accent-dark));`}>
+								{e.data.name}
+							</b>
+						</p>
+						<small>{e.data.description}</small>
+					</div>
+					<Image
+					src={icon}
+					class="club-favicon"
+					alt={e.data.name + " icon"}
+					format="png"
+					style="image-rendering: pixelated; height: 67px; width: 67px;" 
+				/>
+				</a>
+					);
+				})()
+			))
+			}
+		</div>
+
+		<footer style="margin-top: 2rem; text-align: center;">
+			<p style="margin: 0; font-size: 1rem; line-height: 1.5; font-weight: 500;">
+				<strong>Total</strong>: {totalCount}
+				<span aria-hidden="true"> | </span>
+				<strong>Clubs</strong>: {clubsCount}
+				<span aria-hidden="true"> • </span>
+				<strong>Teams</strong>: {teamsCount}
+			</p>
+			<p style="margin: 0.15rem 0 0; font-size: 0.97rem; line-height: 1.5; opacity: 0.95;">
+				<strong>STEM</strong>: {categoryCounts.STEM}
+				<span aria-hidden="true"> • </span>
+				<strong>Cultural</strong>: {categoryCounts.Cultural}
+				<span aria-hidden="true"> • </span>
+				<strong>Humanities</strong>: {categoryCounts.Humanities}
+				<span aria-hidden="true"> • </span>
+				<strong>IEEE</strong>: {categoryCounts.IEEE}
+			</p>
+			<p style="margin: 0.35rem 0 0; font-size: 0.99rem;">
+				Are you a club president? <a href="/update"><strong>Update</strong></a> your club's info!
+			</p>
+		</footer>
+		
+		<script>
+			const filterButtons = document.querySelectorAll('.filter-btn');
+			const clubContainers = document.querySelectorAll<HTMLElement>('.club-container');
+			
+			let selectedOrg = 'all';
+			let selectedCategory = 'all';
+			
+			function filterClubs() {
+				clubContainers.forEach(container => {
+					const orgTypes = (container.getAttribute('data-org-type') || '').split(',');
+					const categories = (container.getAttribute('data-category') || '').split(',');
+					
+					const matchesOrg = selectedOrg === 'all' || orgTypes.includes(selectedOrg);
+					const matchesCategory = selectedCategory === 'all' || categories.includes(selectedCategory);
+					
+					if (matchesOrg && matchesCategory) {
+						container.style.display = '';
+					} else {
+						container.style.display = 'none';
+					}
+				});
+			}
+			
+			filterButtons.forEach(button => {
+				button.addEventListener('click', () => {
+					const filterType = button.getAttribute('data-filter-type');
+					const value = button.getAttribute('data-value');
+					
+					if (!filterType || !value) return;
+					
+					// Update active state for buttons in the same group
+					document.querySelectorAll(`[data-filter-type="${filterType}"]`).forEach(btn => {
+						btn.classList.remove('active');
+					});
+					button.classList.add('active');
+					
+					// Update selected filter
+					if (filterType === 'organization') {
+						selectedOrg = value;
+					} else if (filterType === 'category') {
+						selectedCategory = value;
+					}
+					
+					filterClubs();
+				});
+			});
+		</script>
 	</body>
 </html>

@@ -1,0 +1,107 @@
+---
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout title="Terms of Service and Acceptable Use Policy">
+	<main class="tos-page">
+		<a href="/" class="back-button">← Back</a>
+		<article>
+			<h1>Terms of Service and Acceptable Use Policy</h1>
+			<p><strong>Last Updated: Wed Feb 25 06:52 PM IST 2026</strong></p>
+
+			<h3>1. Platform Status and Intermediary Disclaimer</h3>
+			<p>This website ("The Platform") operates strictly as an intermediary as defined under Section 2(1)(w) of the Information Technology Act, 2000.</p>
+			<p>The Platform provides an automated, passive technical infrastructure for authorized student club representatives ("Users") to host and display content. The Platform does not initiate the transmission, select the receiver, or modify the information contained in the transmissions. All content hosted on club pages is solely the responsibility of the User who submitted it via our automated pipeline. The Platform explicitly disclaims any liability for user-generated content under Section 79 of the IT Act.</p>
+
+			<h3>2. Mandatory Content Restrictions (Statutory Compliance)</h3>
+			<p>To maintain access to The Platform, Users must not host, display, upload, modify, publish, transmit, store, update, or share any information that:</p>
+			<ul>
+				<li><strong>A.</strong> Belongs to another person and to which the user does not have any right.</li>
+				<li><strong>B.</strong> Is defamatory, obscene, pornographic, pedophilic, invasive of another's privacy (including bodily privacy), insulting or harassing on the basis of gender, libelous, racially or ethnically objectionable, or encouraging money laundering or gambling.</li>
+				<li><strong>C.</strong> Is harmful to children.</li>
+				<li><strong>D.</strong> Infringes any patent, trademark, copyright, or other proprietary rights.</li>
+				<li><strong>E.</strong> Violates any law currently in force in India.</li>
+				<li><strong>F.</strong> Deceives or misleads the addressee about the origin of the message or knowingly and intentionally communicates any information which is patently false or misleading in nature but may reasonably be perceived as a fact.</li>
+				<li><strong>G.</strong> Impersonates another person.</li>
+				<li><strong>H.</strong> Threatens the unity, integrity, defense, security, or sovereignty of India, friendly relations with foreign states, or public order, or causes incitement to the commission of any cognizable offense.</li>
+				<li><strong>I.</strong> Contains software viruses or any other computer code, file, or program designed to interrupt, destroy, or limit the functionality of any computer resource.</li>
+				<li><strong>J.</strong> Is patently false and untrue, and is written or published with the intent to mislead or harass a person, entity, or agency for financial gain or to cause any injury to any person.</li>
+			</ul>
+
+			<h3>3. Platform-Specific Acceptable Use</h3>
+			<p>In addition to statutory requirements, The Platform enforces the following operational rules to maintain the integrity of the student club repository:</p>
+			<ul>
+				<li><strong>A. Scope of Content:</strong> All submitted content must strictly relate to the official operations, events, descriptions, and contact information of the designated club.</li>
+				<li><strong>B. Prohibition of Inter-Club Conflict:</strong> The Platform is not a forum for debate or dispute. Content that explicitly disparages, targets, or attacks other clubs, students, or faculty members is strictly prohibited.</li>
+				<li><strong>C. Commercial Activity:</strong> Users may not use The Platform to host unauthorized commercial advertisements, affiliate links, or solicitations unrelated to official club funding.</li>
+			</ul>
+
+			<h3>4. Enforcement and Takedown Protocol</h3>
+			<p>The Platform administrators do not pre-screen or proactively edit content. However, we reserve the right to perform post-publication moderation to enforce this Acceptable Use Policy.</p>
+			<ul>
+				<li><strong>A. Action:</strong> If content is found to violate these Terms, administrators will completely remove the violating file or revert the automated commit. Administrators will not edit or alter the User's text to make it compliant.</li>
+				<li><strong>B. Revocation of Access:</strong> Violations of this policy will result in the immediate revocation of the User's authorized email address from the automated deployment pipeline, permanently barring them from publishing future updates.</li>
+				<li><strong>C. Grievance Redressal:</strong> If you identify content on The Platform that violates these Terms or Indian law, contact us at <a href="https://amrita.town/contact">amrita.town/contact</a>. Takedown requests must explicitly cite the clause of this ToS or the IT Act that the content violates.</li>
+			</ul>
+		</article>
+	</main>
+</Layout>
+
+<style>
+	.tos-page {
+		max-width: 80%;
+		margin: 2rem auto;
+		padding: 2rem;
+		border: 1px solid var(--text);
+		border-radius: 0.5rem;
+		position: relative;
+	}
+
+	.back-button {
+		position: absolute;
+		top: 1rem;
+		left: 1rem;
+		padding: 0.5rem 1rem;
+		background: var(--background);
+		border: 1px solid var(--text);
+		border-radius: 0.25rem;
+		text-decoration: none;
+		color: var(--text);
+		font-size: 0.9rem;
+		transition: background 0.2s;
+	}
+
+	.back-button:hover {
+		background: var(--text);
+		color: var(--background);
+	}
+
+	article {
+		margin-top: 2rem;
+	}
+
+	h1 {
+		margin-top: 0;
+		margin-bottom: 1rem;
+	}
+
+	h3 {
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	ul {
+		margin: 1rem 0;
+		padding-left: 2rem;
+	}
+
+	li {
+		margin: 0.75rem 0;
+		line-height: 1.6;
+	}
+
+	p {
+		margin: 1rem 0;
+		line-height: 1.6;
+	}
+</style>

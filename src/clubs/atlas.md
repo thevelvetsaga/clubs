@@ -1,17 +1,21 @@
 ---
 name: ATLAS
-description: The systems programming club of Amrita Bengaluru
+description: The systems programming club
+accent_color_light: oklch(71.73% .2333 42.82)
+accent_color_dark: oklch(71.73% .2333 42.82)
 links:
-    website: https://atlasdev.club
-    instagram: https://instagram.com/atlas_aseb
-    whatsapp: https://atlasdev.club/
-type:
-    - club
-    - tech
-    - - cse
-      - ece
+  Website: https://atlasdev.club
+  Instagram: https://instagram.com/atlas_aseb
+  Whatsapp: https://atlasdev.club/whatsapp
+  LinkedIn: https://www.linkedin.com/company/atlas-aseb/
+  Github: https://github.com/atlas-aseb
+  X: https://x.com/atlas_aseb
+classification:
+  organization:
+  - Club
+  category:
+  - STEM
 ---
-
 We're ATLAS, the systems programming club of Amrita Vishwa Vidyapeetham, Bengaluru.
 
 We're about the software that other programmers rely on to do their work, touching the low-level internals of everything that few need to explore. We forge the very anvils upon which others fabricate their digital creations. 

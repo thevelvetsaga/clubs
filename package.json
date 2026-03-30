@@ -1,5 +1,5 @@
 {
-  "name": "clubs",
+  "name": "clubs.amrita.town",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,6 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.17.1"
+    "@astrojs/check": "^0.9.6",
+    "astro": "^5.17.1",
+    "typescript": "^5.9.3"
   }
 }

@@ -1,0 +1,88 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+	const clubs = await getCollection('clubs');
+	return clubs.map((entry) => ({
+		params: { slug: entry.id },
+		props: { entry },
+	}));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { accent_color_light, accent_color_dark, links, name } = entry.data;
+---
+
+<Layout title={name}>
+	<main class="club-page" style={`--accent-light: ${accent_color_light || 'var(--text)'}; --accent-dark: ${accent_color_dark || accent_color_light || 'var(--text)'}`}>
+		<a href="/" class="back-button">← Back</a>
+		<article>
+			<header>
+				<h1 style="margin: 0%;">{name}</h1>
+				<div class="links">
+					{links.Website && <a href={links.Website} target="_blank">Website</a>}
+					{links.Instagram && <a href={links.Instagram} target="_blank">Instagram</a>}
+					{links.Whatsapp && <a href={links.Whatsapp} target="_blank">WhatsApp</a>}
+					{links.LinkedIn && <a href={links.LinkedIn} target="_blank">LinkedIn</a>}
+					{links.X && <a href={links.X} target="_blank">X</a>}
+					{links.Github && <a href={links.Github} target="_blank">GitHub</a>}
+				</div>
+			</header>
+			<hr />
+			<div class="content">
+				<Content />
+			</div>
+		</article>
+	</main>
+</Layout>
+
+<style>
+	.club-page {
+		--accent: light-dark(var(--accent-light), var(--accent-dark));
+		max-width: 70ch;
+		margin: 2rem auto;
+		padding: 2rem;
+		border: 1px solid var(--accent);
+		border-radius: 0.5rem;
+		position: relative;
+	}
+	.back-button {
+		display: inline-block;
+		margin-bottom: 2rem;
+		text-decoration: none;
+		color: var(--text);
+		opacity: 0.8;
+	}
+	.back-button:hover {
+		opacity: 1;
+	}
+	header {
+		margin-bottom: 1rem;
+	}
+	h1 {
+		/* margin-bottom: 0.5rem; */
+		color: var(--accent);
+	}
+	.links {
+		display: flex;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+	.links a {
+		font-size: 0.9rem;
+		text-decoration: none;
+		color: var(--text);
+		/* border-bottom: 1px solid var(--secondary); */
+	}
+	.links a:hover {
+		border-bottom-color: var(--accent);
+	}
+	hr {
+		border: 0;
+		/* border-top: 1px solid var(--secondary); */
+		/* margin: 2rem 0; */
+		opacity: 0.2;
+	}
+</style>

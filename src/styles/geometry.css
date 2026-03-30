@@ -1,0 +1,99 @@
+.clubs-grid {
+	display: flex;
+
+	flex-wrap: wrap;
+	gap: 1rem;
+	/* margin-top: 2rem; why? */
+	justify-content: safe center;
+}
+
+.club-container {
+	width: 320px;
+    height: 90px;
+	padding: .75rem 1rem;
+	background-color: var(--tertiary);
+	padding: .75rem var(--x-padding, 1rem);
+	border-radius: .5rem;
+	color: var(--text);
+	text-decoration: none;
+	display: flex;
+	gap: .5rem;
+	justify-content: space-between;
+	align-items: flex-start;
+	border: 1px solid transparent;
+	overflow: hidden;
+}
+
+.club-container:hover {
+	background-color: var(--tertiary);
+	outline: 1px solid var(--secondary);
+}
+
+.club-info {
+	display: flex;
+	flex-direction: column;
+	gap: 0.1rem;
+	flex: 1;
+}
+
+.club-info p {
+	margin: 0;
+	white-space: normal;
+	word-break: break-word;
+}
+
+.club-actions {
+	display: flex;
+	gap: 0.5rem;
+	margin-top: 0.5rem;
+}
+
+.club-actions a, .club-actions button {
+	font-size: 0.75rem;
+	padding: 0.2rem 0.5rem;
+	border-radius: 0.2rem;
+	border: 1px solid var(--secondary);
+	background: var(--tertiary);
+	color: var(--text);
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.club-favicon {
+	height: 100%;
+	max-width: 4.5rem;
+	object-fit: contain;
+	image-rendering: pixelated;
+	flex-shrink: 0;
+	position: sticky;
+	top: 0;
+}
+
+.filter-group {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.filter-btn {
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--secondary);
+	background: var(--base);
+	color: var(--text);
+	cursor: pointer;
+	border-radius: 0.5rem;
+	transition: all 0.2s;
+	font-size: 0.95rem;
+}
+
+.filter-btn:hover {
+	background: var(--secondary);
+}
+
+.filter-btn.active {
+	background: var(--accent);
+	color: var(--base);
+	border-color: var(--accent);
+	font-weight: 600;
+}
+
